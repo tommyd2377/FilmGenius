@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="https://img.clipartxtras.com/ac3323a42be039d2a941c245442cf74e_strip-clipart-clipground-film-reel-clipart-border_615-197.jpeg" />
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
-    <script src="JS/app.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/main.css" />
+    <script src="../JS/questions.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -24,14 +24,16 @@
     </script>
 </head>
 <body>
-    <div class="welcome">
-        <h1>Welcome to FilmMatch!</h1>
-        <br>
-        <p>FilmMatch is the world's most fun web-based movie trivia game</p>
-    </div>
-    <div class="username">
-        <input type="text" name="username" id="username">
-        <button onclick="setUsername()">Choose Username</button>
+    <header>
+        <h1>FilmMatch</h1>
+        <h2 id="currentUser"></h2>
+    </header>
+    <div class="questions">
+        <h1>Who was the director of "Film"?</h1>
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <button>D</button>
     </div>
 </body>
 </html>
