@@ -10,6 +10,8 @@ function setUsername() {
     console.log(username);
     db.collection("users").doc(username).set({
         username: (username),
+        currentScore: 0,
+        highScore: 0
     })
     .then(function() {
         console.log("Document successfully written!");
