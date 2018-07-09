@@ -17,6 +17,7 @@ function setUsername() {
         console.log("Document successfully written!");
         window.location.href = "Pages/questions.html";
         localStorage.setItem('username', (username));
+        localStorage.setItem('score', 0);
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
