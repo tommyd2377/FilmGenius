@@ -23,26 +23,8 @@ document.addEventListener("DOMContentLoaded", event => {
 })
 
 function clickA() {
-    const app = firebase.app();
-    const db = app.firestore();
     if (shuffledAnswers[0] === results[0].correct_answer) {
-      console.log("correct");
-      let currentUser = localStorage.getItem('username');
-      let welcome = document.getElementById('currentUser');
-      score += 10;
-      db.collection("users").doc(currentUser).update({
-        highScore: score
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-      console.log(score);
-      welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
-      results.shift();
-      newQuestion();
+      answerCorrect();
   }
     else {
       console.log("incorrect");
@@ -51,26 +33,8 @@ function clickA() {
     }
   }
   function clickB() {
-    const app = firebase.app();
-    const db = app.firestore();
     if (shuffledAnswers[1] === results[0].correct_answer) {
-      console.log("correct");
-      let currentUser = localStorage.getItem('username');
-    let welcome = document.getElementById('currentUser');
-      score += 10;
-      db.collection("users").doc(currentUser).update({
-        highScore: score
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-      console.log(score);
-      welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
-      results.shift();
-      newQuestion();
+      answerCorrect();
   }
     else {
       console.log("incorrect");
@@ -80,26 +44,8 @@ function clickA() {
   }
 
   function clickC() {
-    const app = firebase.app();
-    const db = app.firestore();
     if (shuffledAnswers[2] === results[0].correct_answer) {
-      console.log("correct");
-      let currentUser = localStorage.getItem('username');
-      let welcome = document.getElementById('currentUser');
-      score += 10;
-      db.collection("users").doc(currentUser).update({
-        highScore: score
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-      console.log(score);
-      welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
-      results.shift();
-      newQuestion();
+      answerCorrect();
   }
     else {
       console.log("incorrect");
@@ -109,24 +55,8 @@ function clickA() {
   }
 
   function clickD() {
-    const app = firebase.app();
-    const db = app.firestore();
     if (shuffledAnswers[3] === results[0].correct_answer) {
-      console.log("correct");
-      score += 10;
-      db.collection("users").doc(currentUser).update({
-        highScore: score
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-      console.log(score);
-      welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
-      results.shift();
-      newQuestion();
+      answerCorrect();
   }
     else {
       console.log("incorrect");
@@ -171,7 +101,8 @@ function clickA() {
     const db = app.firestore();
     console.log("correct");
     score += 10;
-    
+    let currentUser = localStorage.getItem('username');
+    let welcome = document.getElementById('currentUser');
     db.collection("users").doc(currentUser).update({
       highScore: score
     })
