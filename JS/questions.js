@@ -18,27 +18,7 @@ document.addEventListener("DOMContentLoaded", event => {
       }) 
       .then(function(myJson) {
         results = myJson.results;
-            let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            var timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+            newQuestion();
       });
 })
 
@@ -62,52 +42,12 @@ function clickA() {
       console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
   }
     else {
       console.log("incorrect");
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
     }
   }
   function clickB() {
@@ -130,52 +70,12 @@ function clickA() {
       console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
   }
     else {
       console.log("incorrect");
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
     }
   }
 
@@ -199,52 +99,12 @@ function clickA() {
       console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
   }
     else {
       console.log("incorrect");
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
     }
   }
 
@@ -266,51 +126,64 @@ function clickA() {
       console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
   }
     else {
       console.log("incorrect");
       results.shift();
-      let random = Math.floor((Math.random() * 3));
-            let correct = results[0].correct_answer;
-            let incorrect = results[0].incorrect_answers;
-            incorrect.splice(random, 0, correct);
-            let question = document.getElementById('question');
-            question.innerHTML = results[0].question;
-            let A = document.getElementById('a');
-            A.innerHTML = incorrect[0];
-            let B = document.getElementById('b');
-            B.innerHTML = incorrect[1];
-            let C = document.getElementById('c');
-            C.innerHTML = incorrect[2];
-            let D = document.getElementById('d');
-            D.innerHTML = incorrect[3];
-            shuffledAnswers = incorrect;
-            timeleft = 10;
-            var downloadTimer = setInterval(function(){
-              document.getElementById("progressBar").value = 10 - --timeleft;
-              if(timeleft <= 0)
-                clearInterval(downloadTimer);
-            },1000);
+      newQuestion();
     }
+  }
+
+  function newQuestion() {
+    let random = Math.floor((Math.random() * 3));
+    let correct = results[0].correct_answer;
+    let incorrect = results[0].incorrect_answers;
+      incorrect.splice(random, 0, correct);
+    
+    let question = document.getElementById('question');
+    question.innerHTML = results[0].question;
+    
+    let A = document.getElementById('a');
+    A.innerHTML = incorrect[0];
+    
+    let B = document.getElementById('b');
+    B.innerHTML = incorrect[1];
+    
+    let C = document.getElementById('c');
+    C.innerHTML = incorrect[2];
+    
+    let D = document.getElementById('d');
+    D.innerHTML = incorrect[3];
+    
+    shuffledAnswers = incorrect;
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+    
+    document.getElementById("progressBar").value = 10 - --timeleft;
+      if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    }, 1000);
+  }
+
+  function answerCorrect() {
+    const app = firebase.app();
+    const db = app.firestore();
+    console.log("correct");
+    score += 10;
+    
+    db.collection("users").doc(currentUser).update({
+      highScore: score
+    })
+      .then(function() {
+        console.log("Document successfully written!");
+      })
+        .catch(function(error) {
+        console.error("Error writing document: ", error);
+        });
+    
+    console.log(score);
+    welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
+    results.shift();
+    newQuestion();
   }
