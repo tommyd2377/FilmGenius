@@ -34,6 +34,7 @@ body {
     width: 400px;
     height: 300px;
     position: absolute;
+    font-size: 15pt;
     top:0;
     bottom: 0;
     left: 0;
@@ -43,6 +44,7 @@ body {
 
 header {
     margin: 20px;
+    font-size: 20pt;
 }
 
 button {
@@ -53,6 +55,7 @@ button {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    font-size: 15pt;
 }
 
 input[type=text] {

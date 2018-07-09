@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", event => {
     let currentUser = localStorage.getItem('username');
     let currentScore = localStorage.getItem('score');
     let welcome = document.getElementById('currentUser');
-    score = currentScore;
+    console.log(currentScore);
+    score = parseInt(currentScore);
     welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
-    score = currentScore;
     fetch('https://opentdb.com/api.php?amount=50&category=11')
       .then(function(response) {
         return response.json();
@@ -33,15 +33,33 @@ document.addEventListener("DOMContentLoaded", event => {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            var timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
       });
 })
 
 function clickA() {
+    const app = firebase.app();
+    const db = app.firestore();
     if (shuffledAnswers[0] === results[0].correct_answer) {
       console.log("correct");
       let currentUser = localStorage.getItem('username');
-    let welcome = document.getElementById('currentUser');
+      let welcome = document.getElementById('currentUser');
       score += 10;
+      db.collection("users").doc(currentUser).update({
+        highScore: score
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+      console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
       let random = Math.floor((Math.random() * 3));
@@ -59,6 +77,12 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
   }
     else {
       console.log("incorrect");
@@ -78,14 +102,32 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
     }
   }
   function clickB() {
+    const app = firebase.app();
+    const db = app.firestore();
     if (shuffledAnswers[1] === results[0].correct_answer) {
       console.log("correct");
       let currentUser = localStorage.getItem('username');
     let welcome = document.getElementById('currentUser');
       score += 10;
+      db.collection("users").doc(currentUser).update({
+        highScore: score
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+      console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
       let random = Math.floor((Math.random() * 3));
@@ -103,6 +145,12 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
   }
     else {
       console.log("incorrect");
@@ -122,15 +170,33 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
     }
   }
 
   function clickC() {
+    const app = firebase.app();
+    const db = app.firestore();
     if (shuffledAnswers[2] === results[0].correct_answer) {
       console.log("correct");
       let currentUser = localStorage.getItem('username');
       let welcome = document.getElementById('currentUser');
       score += 10;
+      db.collection("users").doc(currentUser).update({
+        highScore: score
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+      console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
       let random = Math.floor((Math.random() * 3));
@@ -148,6 +214,12 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
   }
     else {
       console.log("incorrect");
@@ -167,13 +239,31 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
     }
   }
 
   function clickD() {
+    const app = firebase.app();
+    const db = app.firestore();
     if (shuffledAnswers[3] === results[0].correct_answer) {
       console.log("correct");
       score += 10;
+      db.collection("users").doc(currentUser).update({
+        highScore: score
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+      console.log(score);
       welcome.innerHTML = "Hey " + currentUser + "! Your current score is " + score;
       results.shift();
       let random = Math.floor((Math.random() * 3));
@@ -191,6 +281,12 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
   }
     else {
       console.log("incorrect");
@@ -210,5 +306,11 @@ function clickA() {
             let D = document.getElementById('d');
             D.innerHTML = incorrect[3];
             shuffledAnswers = incorrect;
+            timeleft = 10;
+            var downloadTimer = setInterval(function(){
+              document.getElementById("progressBar").value = 10 - --timeleft;
+              if(timeleft <= 0)
+                clearInterval(downloadTimer);
+            },1000);
     }
   }
