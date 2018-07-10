@@ -10,7 +10,19 @@ body {
 
 .welcome {
     width: 400px;
-    height: 300px;
+ 
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 20pt;
+}
+
+.username {
+    width: 400px;
+    height: 6px;
     position: absolute;
     top:0;
     bottom: 0;
@@ -19,15 +31,8 @@ body {
     margin: auto;
 }
 
-.username {
-    width: 400px;
-    height: 10px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+.final {
+    background-color: yellow;
 }
 
 .questions {
@@ -65,4 +70,27 @@ input[type=text] {
     box-sizing: border-box;
     border: 2px solid aqua;
     border-radius: 4px;
+}
+
+.newGame {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15pt;
+    width: 400px;
+    height: 60px;
+    position: absolute;
+    font-size: 15pt;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pink {
+    background-color: hotpink;
 }
